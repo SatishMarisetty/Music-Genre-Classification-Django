@@ -6,7 +6,7 @@ def getmetadata(filename):
     y, sr = librosa.load(filename)
     #fetching tempo
 
-    onset_env = librosa.onset.onset_strength(y, sr)
+    onset_env = librosa.onset.onset_strength(y=y, sr=sr)
     tempo = librosa.beat.tempo(onset_envelope=onset_env, sr=sr)
 
     #fetching beats
@@ -24,7 +24,7 @@ def getmetadata(filename):
 
     #fetching spectral centroid
 
-    spec_centroid = librosa.feature.spectral_centroid(y, sr=sr)[0]
+    spec_centroid = librosa.feature.spectral_centroid(y=y, sr=sr)[0]
 
     #spectral bandwidth
 
@@ -32,11 +32,11 @@ def getmetadata(filename):
 
     #fetching spectral rolloff
 
-    spec_rolloff = librosa.feature.spectral_rolloff(y+0.01, sr=sr)[0]
+    spec_rolloff = librosa.feature.spectral_rolloff(y=y+0.01, sr=sr)[0]
 
     #zero crossing rate
 
-    zero_crossing = librosa.feature.zero_crossing_rate(y)
+    zero_crossing = librosa.feature.zero_crossing_rate(y=y)
 
     #mfcc
 

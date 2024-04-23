@@ -2,6 +2,6 @@ Django
 librosa==0.7.0
 matplotlib
 numpy
+numba
 pandas
-scikit-learn
 setuptools
